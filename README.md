@@ -1,4 +1,4 @@
-# Svelte components for ImageEngine integration
+# Svelte components for ImageEngine integration-BetaNotTested
 
 Hassle-free way to deliver optimized responsive images in your Svelte applications.
 
