@@ -1,38 +1,145 @@
-# create-svelte
+# Svelte components for ImageEngine integration
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Hassle-free way to deliver optimized responsive images in your Svelte applications.
 
-## Creating a project
+## Quick start
 
-If you're seeing this, you've probably already done this step. Congrats!
+The package includes four components:
 
-```bash
-# create a new project in the current directory
-npm init svelte
+* `ImageEngineProvider`
+* `Image`
+* `Picture`
+* `Source`
 
-# create a new project in my-app
-npm init svelte my-app
+To start using provided image tags in your application, place `ImageEngineProvider` somewhere above them in the DOM tree with the `deliveryAddress` prop set to your [ImageEngine Delivery Address](https://support.imageengine.io/hc/en-us/articles/360059238371-Quick-Start):
+
+```jsx
+<script>
+ import { ImageEngineProvider } from 'image-engine-svelte';
+</script>
+<h1>Welcome to SvelteKit</h1>
+<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<ImageEngineProvider
+    deliveryAddress="https://blazing-fast-pics.cdn.imgeng.in"
+    // or, for local development:
+    // deliveryAddress="http://localhost:9009"
+>
+    <ShoppingCart />
+    ...
+</ImageEngineProvider>
 ```
 
-## Developing
+```jsx
+<script>
+ import { Image } from 'image-engine-svelte';
+</script>
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+<section>
+    <Image
+        src="pick-ups/custom/unstoppable.jpg"
+        srcSet={...}
+        sizes={...}
+        directives={...}
+        {...otherProps}
+    />
+</section>
 ```
 
-## Building
+[Demo app on CodeSandbox](https://codesandbox.io/s/3lz2y?file=/src/App.tsx)
 
-To create a production version of your app:
+## Component props reference
 
-```bash
-npm run build
+### ImageEngineProvider
+
+`deliveryAddress` - [ImageEngine Delivery Address](https://support.imageengine.io/hc/en-us/articles/360059238371-Quick-Start):
+
+```ts
+deliveryAddress: string
 ```
 
-You can preview the production build with `npm run preview`.
+`stripFromSrc` - Strip away a portion of a source string in all ImageEngine's components. Particularly useful if your images are coming from a headless CMS and you need to erase something in received URL path (origin, for example):
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```ts
+stripFromSrc?: string
+```
+
+### Image
+
+`src` - Relative path to the image:
+
+```ts
+src: string
+```
+
+`directives` - ImageEngine directives:
+
+```ts
+directives?: {
+  // Define desired width.
+  width?: number
+  // Set width to auto (with fallback).
+  autoWidthWithFallback?: number
+  // Define desired height.
+  height?: number
+  // Adjust compression.
+  // Possible range: 0-100.
+  compression?: number
+  // Define desired output format.
+  outputFormat?:
+    | "png"
+    | "gif"
+    | "jpg"
+    | "bmp"
+    | "webp"
+    | "jp2"
+    | "svg"
+    | "mp4"
+    | "jxr"
+  // Define desired fit method.
+  fitMethod?: "stretch" | "box" | "letterbox" | "cropbox"
+  // Don't apply any optimizations to the origin image.
+  noOptimization?: true
+  // Adjust sharpness.
+  // Possible range: 0-100.
+  sharpness?: number
+  // Define rotation.
+  // Possible range: -360 to 360.
+  rotate?: number
+  // Use WURFL to calculate screen's width and then scale the image accordingly.
+  // Possible range: 0-100 (float).
+  scaleToScreenWidth?: number
+  // Crop the image [width, height, left, top].
+  crop?: number[]
+  // Convert the image into a data url.
+  inline?: true
+  // Keep EXIF data.
+  keepMeta?: true
+}
+```
+
+`srcSet` - List of image variations for the image source set:
+
+```ts
+srcSet?: [{
+  // Relative path to the image.
+  src: string
+  // Width descriptor.
+  width: string
+  // Custom optimization instructions.
+  directives?: TDirectives
+}]
+```
+
+### Source
+
+`srcSet` - List of image variations for the image source set:
+
+```ts
+srcSet?: [{
+  // Relative path to the image.
+  src: string
+  // Width descriptor.
+  width: string
+  directives?: TDirectives
+}]
+```
