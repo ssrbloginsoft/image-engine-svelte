@@ -143,3 +143,31 @@ srcSet?: [{
   directives?: TDirectives
 }]
 ```
+
+## Development
+
+All the components were written inside ` src/lib `.
+For more information about package development click on the below link.
+[Documentation for package development](https://kit.svelte.dev/docs/packaging)
+
+### Generation of package
+
+In the root of the project folder run
+
+>` npx svelte-kit package `
+
+OR
+
+> ` svelte-kit package ` (If it is globally installed)
+
+to prepare the package for publishing.
+
+### Publishing the package
+
+Package directory will be created when above command was executed and run the following commands to publish package:
+
+> ` cd package `
+>
+> ` npm publish `
+
+Above command will publish the package to npm repository.
