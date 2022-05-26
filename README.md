@@ -45,7 +45,7 @@ To start using provided image tags in your application, place `ImageEngineProvid
 </section>
 ```
 
-[Demo app on CodeSandbox](https://codesandbox.io/s/3lz2y?file=/src/App.tsx)
+<!-- [Demo app on CodeSandbox](https://codesandbox.io/s/3lz2y?file=/src/App.tsx) -->
 
 ## Component props reference
 
