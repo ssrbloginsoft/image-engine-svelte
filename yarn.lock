@@ -68,10 +68,10 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@imageengine/imageengine-helpers@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@imageengine/imageengine-helpers/-/imageengine-helpers-0.0.6.tgz#873cde844fc500fdb4625fa597caa43cbaf099ec"
-  integrity sha512-C+ZPszt/B6Dhu7Phowu24J1gUjWWptR+FGiiaWQ6Il9OgLGYXFxdEEPJHuP6dz7kv+Rw4t/tRtrxe5XjQgBZGw==
+"@imageengine/imageengine-helpers@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@imageengine/imageengine-helpers/-/imageengine-helpers-0.2.1.tgz#b2a06dea10b4ea7ea934f89461bacec4134cefac"
+  integrity sha512-X4HsZKFfo5zXOFtMU4OR1hHqEhsJBYztwiZ+8rLTRuyJeMmJFfCVLBheH0cOkFOdrR30qotQkRxXrYWG3bIV8Q==
 
 "@jridgewell/resolve-uri@^3.1.0":
   version "3.1.2"
