@@ -633,7 +633,7 @@ debug@^3.2.6:
 dedent-js@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/dedent-js/-/dedent-js-1.0.1.tgz#bee5fb7c9e727d85dffa24590d10ec1ab1255305"
-  integrity sha1-vuX7fJ5yfYXf+iRZDRDsGrElUwU=
+  integrity sha512-OUepMozQULMLUmhxS95Vudo0jb0UchLimi3+pQ2plj61Fcy8axbP9hbiD4Sz6DPqn6XG3kfmziVfQ1rSys5AJQ==
 
 deep-extend@^0.6.0:
   version "0.6.0"
@@ -2085,9 +2085,9 @@ svelte-preprocess@^5.0.0, svelte-preprocess@^5.1.0:
     strip-indent "^3.0.0"
 
 svelte2tsx@^0.7.0:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.7.1.tgz#23d56971e690d5a7b084e85bd232c756f7a7c496"
-  integrity sha512-0lKa6LrqJxRan0bDmBd/uFsVzYSXnoFUDaczaH0znke/XI79oy1JjFaF51J9EsOvpn8lXPlrUc3n/MA/ORNxBg==
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.7.4.tgz#2cfc4a9e88e6bcbbe7f828936754ac34c7d51d6e"
+  integrity sha512-zAtbQD7JmeKe0JWdKO6l38t7P6wFP0+YTc0LLFdtzWdHEddcE+/VMvJquQI9NNsnrinUbtS9JF3kosPNeglMcQ==
   dependencies:
     dedent-js "^1.0.1"
     pascal-case "^3.1.1"
